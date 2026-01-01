@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ph4se Status - Real-time service status and uptime monitoring.">
+    <title>Status · ph4se</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="grid-bg"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-bracket">[</span>
+            <span class="logo-text">ph4se</span>
+            <span class="logo-bracket">]</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="status.html" class="active">Status</a></li>
+            <li><a href="credits.html">Credits</a></li>
+            <li><a href="discord.html" class="nav-cta">Discord</a></li>
+        </ul>
+        <button class="mobile-menu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main>
+        <section class="status-hero">
+            <div class="container">
+                <div class="status-indicator operational">
+                    <span class="status-dot"></span>
+                    <span class="status-text">All Systems Operational</span>
+                </div>
+                <h1 class="section-title">Service Status</h1>
+                <p class="section-subtitle">Real-time monitoring of ph4se bot and infrastructure</p>
+            </div>
+        </section>
+
+        <!-- Live Stats Section -->
+        <section class="live-stats-section">
+            <div class="container">
+                <div class="live-stats-grid">
+                    <div class="live-stat-card">
+                        <div class="live-stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="live-stat-content">
+                            <div class="live-stat-number">4.5K+</div>
+                            <div class="live-stat-label">Server Members</div>
+                        </div>
+                    </div>
+                    <div class="live-stat-card">
+                        <div class="live-stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <div class="live-stat-content">
+                            <div class="live-stat-number">132</div>
+                            <div class="live-stat-label">Active Servers</div>
+                        </div>
+                    </div>
+                    <div class="live-stat-card uptime-card-live">
+                        <div class="live-stat-icon pulse-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div class="live-stat-content">
+                            <div class="live-stat-number uptime-counter" id="uptime-display">63h 00m</div>
+                            <div class="live-stat-label">Current Uptime</div>
+                        </div>
+                        <div class="live-indicator">
+                            <span class="live-dot"></span>
+                            LIVE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 60px 24px;">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <h2 class="section-title" style="font-size: 32px;">System Status</h2>
+            </div>
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-item-info">
+                        <h3>Bot Core</h3>
+                        <p>Main bot infrastructure and command processing</p>
+                    </div>
+                    <span class="status-badge operational">Operational</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-item-info">
+                        <h3>Command Handler</h3>
+                        <p>Slash commands and message processing</p>
+                    </div>
+                    <span class="status-badge operational">Operational</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-item-info">
+                        <h3>Database</h3>
+                        <p>Data storage and synchronization</p>
+                    </div>
+                    <span class="status-badge operational">Operational</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-item-info">
+                        <h3>Discord Gateway</h3>
+                        <p>Connection to Discord API services</p>
+                    </div>
+                    <span class="status-badge operational">Operational</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-item-info">
+                        <h3>Event Listeners</h3>
+                        <p>Real-time event processing and reactions</p>
+                    </div>
+                    <span class="status-badge operational">Operational</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="uptime-section" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Performance</span>
+                    <h2 class="section-title">Bot Performance</h2>
+                    <p class="section-subtitle">Real-time metrics and response times</p>
+                </div>
+                <div class="uptime-grid">
+                    <div class="uptime-card">
+                        <div class="uptime-value">&lt;100ms</div>
+                        <div class="uptime-label">Avg Response Time</div>
+                    </div>
+                    <div class="uptime-card">
+                        <div class="uptime-value">99.9%</div>
+                        <div class="uptime-label">Reliability</div>
+                    </div>
+                    <div class="uptime-card">
+                        <div class="uptime-value">4.5K+</div>
+                        <div class="uptime-label">Users Served</div>
+                    </div>
+                    <div class="uptime-card">
+                        <div class="uptime-value">132</div>
+                        <div class="uptime-label">Guilds Active</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2>Experiencing Issues?</h2>
+                        <p>Join our Discord server for real-time updates and support from our team.</p>
+                        <a href="discord.html" class="btn btn-primary btn-large">
+                            Get Support
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="cta-decoration">
+                        <div class="deco-circle"></div>
+                        <div class="deco-circle"></div>
+                        <div class="deco-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-bracket">[</span>
+                        <span class="logo-text">ph4se</span>
+                        <span class="logo-bracket">]</span>
+                    </a>
+                    <p>Premium Discord bot solutions for modern communities.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <a href="index.html">Home</a>
+                        <a href="features.html">Features</a>
+                        <a href="status.html">Status</a>
+                        <a href="credits.html">Credits</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="discord.html">Discord</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ph4se. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="uptime.js"></script>
+</body>
+</html>
