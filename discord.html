@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Redirecting to ph4se Discord server...">
     <title>Discord · ph4se</title>
-    <meta http-equiv="refresh" content="2;url=https://discord.gg/ph4se">
+    <meta http-equiv="refresh" content="5;url=https://discord.gg/ph4se">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -127,24 +127,26 @@
     </main>
 
     <script>
-        // Countdown timer
-        let seconds = 5;
-        const countdownEl = document.getElementById('countdown');
-        
-        const countdown = setInterval(() => {
-            seconds--;
-            countdownEl.textContent = seconds;
-            
-            if (seconds <= 0) {
-                clearInterval(countdown);
-                window.location.href = 'https://discord.gg/ph4se';
-            }
-        }, 1000);
+  const REDIRECT_URL = 'https://discord.gg/ph4se';
+  let seconds = 5;
 
-        // Fallback redirect
-        setTimeout(() => {
-            window.location.href = 'https://discord.gg/ph4se';
-        }, 2500);
-    </script>
+  const countdownEl = document.getElementById('countdown');
+  countdownEl.textContent = seconds;
+
+  const interval = setInterval(() => {
+    seconds--;
+    countdownEl.textContent = Math.max(seconds, 0);
+
+    if (seconds <= 0) {
+      clearInterval(interval);
+      window.location.href = REDIRECT_URL;
+    }
+  }, 1000);
+
+  // Fallback redirect (same time)
+  setTimeout(() => {
+    window.location.href = REDIRECT_URL;
+  }, 5000);
+</script>
 </body>
 </html>
